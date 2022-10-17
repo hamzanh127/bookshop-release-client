@@ -17,11 +17,12 @@ function DetailBook(){
         .then(res =>{
             setBooks (res.data)
             setAuthor(res.data.author)
+            // console.log(res.data)
                 })
         .catch(err=>{
             console.log(err)
         })
-    }
+    },[]
     )
   
     return(
@@ -37,7 +38,7 @@ function DetailBook(){
     </div></div>
       <div className="col-md-6">
       <div className = "product-content">
-      <h2 className = "product-title">{books.Title}</h2>
+      <h2 className = "product-title">{books.title}</h2>
      
 
       <div className = "product-price">
@@ -47,17 +48,17 @@ function DetailBook(){
 
       <div className = "product-detail">
         <h2>Description: </h2>
-        <p>{books.Description}</p>
+        <p>{books.description}</p>
       </div>
 
       <div className = "product-detail">
         <h2>Genre: </h2>
-        <p>{books.Genre}</p>
+        <p>{books.genre}</p>
       </div>
 
       <div className = "product-detail">
         <h2>Author: </h2>
-        <p> {author.FirstName} {author.LastName}</p>
+        <p> {author.firstName} {author.lastName}</p>
       </div>
 
      

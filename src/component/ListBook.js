@@ -13,12 +13,12 @@ function ListBook(){
         axios.get('http://127.0.0.1:8000/api/books')
         .then(res =>{
             setBooks (res.data['hydra:member'])
-           
+        //    console.log(res.data['hydra:member'])
                 })
         .catch(err=>{
             console.log(err)
         })
-    }
+    },[]
     )
 
     return(
@@ -35,7 +35,7 @@ function ListBook(){
                     if(serachTitle == ""){
                         return value
                     }
-                    else if(value.Title.toLowerCase().includes(serachTitle?.toLocaleLowerCase())){
+                    else if(value.title.toLowerCase().includes(serachTitle?.toLocaleLowerCase())){
                         return value
                     }
                 }
@@ -46,8 +46,8 @@ function ListBook(){
                     </div>
            
                     <div className="card-bodyy">
-                        <h5 className="card-title">{book.Title}</h5>
-                        <p className="card-text">{book.Description}</p>
+                        <h5 className="card-title">{book.title}</h5>
+                        <p className="card-text">{book.description}</p>
                         <Link to={`/booklist/${book.id}`}  className="btn btn-primary">Details</Link>
                     </div>
                     </div> ) 
