@@ -5,6 +5,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'font-awesome/css/font-awesome.css';
 import ListBook from './component/ListBook';
 import DetailBook from './component/detailBook';
+import AddBook from './component/addbook';
+import ListBookTable from './component/ListBookTable';
 
 function App() {
   return (
@@ -14,7 +16,9 @@ function App() {
           <Header/>
           <Routes>
             <Route path='/booklist' element={<ListBook/>}/>
+            <Route path='/newbook' element={<AddBook/>}/>
             <Route path='/booklist/:id' element={<DetailBook/>}/>
+            <Route path='/updatebook' element={<ListBookTable/>}/>
           </Routes>
         
         </div>
